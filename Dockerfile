@@ -1,5 +1,5 @@
 # Import the base image as UBI-Nodejs 18 image
-FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
+FROM registry.access.redhat.com/ubi8/nodejs-20:1-69
 
 # Set the working directory to /project
 WORKDIR /project
@@ -13,7 +13,7 @@ RUN npm ci
 
 # Add application files in container
 COPY src/main/resources/ .
-RUN ls --recursive .
+RUN ls *.*
 
 # Set permission of .angular file in container
 VOLUME ["/project/.angular"]
