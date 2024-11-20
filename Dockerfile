@@ -19,7 +19,7 @@ RUN ls --recursive .
 VOLUME ["/project/.angular"]
 
 # Open port to allow traffic in container
-EXPOSE 8080
+EXPOSE 8089
 
 # Run start script using npm command
 CMD ["npm", "start"]
