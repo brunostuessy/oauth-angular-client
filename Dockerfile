@@ -22,4 +22,4 @@ VOLUME ["/project/.angular"]
 EXPOSE 8089
 
 # Run start script using npm command
-CMD ["npm", "start"]
+CMD ["npm", "start", "--host 0.0.0.0", "--port 8089"]
