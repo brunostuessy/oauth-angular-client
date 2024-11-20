@@ -49,7 +49,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "auth-code:build"
+            "buildTarget": "auth-code:build",
+            "port": 8089,
+            "host": "0.0.0.0",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {
