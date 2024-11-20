@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {AppService, Foo} from './app.service'
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'foo-details',
-  providers: [AppService],  
+  providers: [AppService],
   template: `<div class="container">
     <h1 class="col-sm-12">Foo Details</h1>
     <div class="col-sm-12">
@@ -13,14 +14,14 @@ import {AppService, Foo} from './app.service'
         <label class="col-sm-3">Name</label> <span>{{foo.name}}</span>
     </div>
     <div class="col-sm-12">
-        <button class="btn btn-primary" (click)="getFoo()" type="submit">New Foo</button>        
+        <button class="btn btn-primary" (click)="getFoo()" type="submit">New Foo</button>
     </div>
 </div>`
 })
 
 export class FooComponent {
     public foo = new Foo(1,'sample foo');
-    private foosUrl = 'http://localhost:8081/resource-server/api/foos/';  
+    private foosUrl = environment.resourceServerUri;
 
     constructor(private _service:AppService) {}
 
